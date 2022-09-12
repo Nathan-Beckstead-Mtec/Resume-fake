@@ -1,0 +1,171 @@
+@use "./colors" as c;
+//@import is apperantly depreciating
+
+$padding-horz: 80px;
+$padding-vert: 40px;
+
+@mixin outline($width, $color, $fill:transparent) {
+	color: $fill;
+	-webkit-text-stroke-width: $width;
+	-webkit-text-stroke-color: $color;
+}
+
+%standard-padding{
+	padding-left: $padding-horz;
+	padding-right: $padding-horz;
+	padding-top: $padding-vert;
+	padding-bottom: $padding-vert;
+}
+
+
+
+body{
+	margin:0;
+	font-size: 16px;
+}
+
+.header{
+	height:400px;
+	//make the left padding the same as the top
+	//magic number: (400-(400*.6)) /2
+	padding-left: 80px;
+	padding-right: 80px;
+
+	background-image: url("../images/pexels-pixabay-276514.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center 70%;
+	background-color: c.$red;
+
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+
+	img{
+		// 400 * .6
+		height: 240px;
+		width: 240px;
+		border-radius: 50%;
+		box-shadow: 0 0 4px 2px c.$pink, 0 0 20px 15px c.$gray;
+	}
+	div{
+
+		h1{
+			color:c.$text;
+			font-size: 4em;
+			text-shadow: 0 0 4px c.$pink, 0 0 4px c.$pink, 0 0 10px c.$black, 0 0 10px c.$black, 0 0 10px c.$black;
+		}
+		h4{
+			color: c.$gray;
+			font-size: 1.5em;
+			text-shadow: 0 1px 10px c.$black, 0 1px 10px c.$black, 0 1px 5px c.$black
+		}
+	}
+}
+
+
+.content{
+	display: flex;
+	justify-content: space-between;
+	font-size: 2em;
+	min-width: calc(100vh - 400px);
+
+	.left{
+		@extend %standard-padding;
+		width:33%;
+		box-shadow: 20px 0px 20px -20px c.$purp;
+		border-right: 5px solid c.$gray;
+		z-index: 1;
+	}
+
+	.right{
+		@extend %standard-padding;
+		width: 66%;
+		background-color: c.$dadfea;
+	}
+}
+.contentlet{
+	padding-bottom: min(4em,30px);
+	//user defined font?
+
+
+	.label{
+		letter-spacing: 0.25em;
+
+		position: relative;
+		left:0;
+		top:0;
+		margin-bottom: 2em;
+
+	}
+
+	.label::after{
+		content: "";
+		position: absolute;
+		left:0;
+		top:calc(100% + 0.5em);
+		width: 4em;
+		height:0.25em;
+		border-radius: 0.125em;
+
+
+		background-color: c.$purp;
+	}
+
+	.contact{
+		padding-left: 54px;
+		//make room for icon
+		//also I have no idea why this magic number works 
+		//(48px pic + 6 px margin?)
+		li {
+			list-style-position: outside;
+			padding-top: 0.25em;
+			padding-bottom: 0.25em;
+	
+			a{
+				text-decoration: none;
+				color: c.$purp;
+			}
+			a:hover{
+				color: c.$pink;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	p{
+		margin:0;
+	}
+
+	.job{
+		margin-bottom: 2em;
+		h6{
+			margin: 0;
+			// margin-bottom: -0.5em;
+			font-size: 1em;
+		}
+		p{
+			font-size: 0.75em;
+		}
+	}
+
+	li::marker{
+		color:c.$purp;
+	}
+
+}
+
+
+#location{
+	list-style-image: url("../svg/map-2.svg");
+}
+#email{
+	list-style-image: url("../svg/mail-forward.svg");
+}
+#phone{
+	list-style-image: url("../svg/phone.svg");
+}
+#reddit{
+	list-style-image: url("../svg/brand-reddit.svg");
+}

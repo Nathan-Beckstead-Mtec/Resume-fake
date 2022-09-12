@@ -1,0 +1,130 @@
+.content .right, .content .left {
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+body {
+  margin: 0;
+  font-size: 16px;
+}
+
+.header {
+  height: 400px;
+  padding-left: 80px;
+  padding-right: 80px;
+  background-image: url("../images/pexels-pixabay-276514.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 70%;
+  background-color: #d52941;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.header img {
+  height: 240px;
+  width: 240px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px #ffbeef, 0 0 20px 15px #848586;
+}
+.header div h1 {
+  color: #fff;
+  font-size: 4em;
+  text-shadow: 0 0 4px #ffbeef, 0 0 4px #ffbeef, 0 0 10px #293132, 0 0 10px #293132, 0 0 10px #293132;
+}
+.header div h4 {
+  color: #848586;
+  font-size: 1.5em;
+  text-shadow: 0 1px 10px #293132, 0 1px 10px #293132, 0 1px 5px #293132;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2em;
+  min-width: calc(100vh - 400px);
+}
+.content .left {
+  width: 33%;
+  box-shadow: 20px 0px 20px -20px #7a6f9b;
+  border-right: 5px solid #848586;
+  z-index: 1;
+}
+.content .right {
+  width: 66%;
+  background-color: #dadfea;
+}
+
+.contentlet {
+  padding-bottom: min(4em, 30px);
+}
+.contentlet .label {
+  letter-spacing: 0.25em;
+  position: relative;
+  left: 0;
+  top: 0;
+  margin-bottom: 2em;
+}
+.contentlet .label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.5em);
+  width: 4em;
+  height: 0.25em;
+  border-radius: 0.125em;
+  background-color: #7a6f9b;
+}
+.contentlet .contact {
+  padding-left: 54px;
+}
+.contentlet .contact li {
+  list-style-position: outside;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+}
+.contentlet .contact li a {
+  text-decoration: none;
+  color: #7a6f9b;
+}
+.contentlet .contact li a:hover {
+  color: #ffbeef;
+  text-decoration: underline;
+}
+.contentlet p {
+  margin: 0;
+}
+.contentlet .job {
+  margin-bottom: 2em;
+}
+.contentlet .job h6 {
+  margin: 0;
+  font-size: 1em;
+}
+.contentlet .job p {
+  font-size: 0.75em;
+}
+.contentlet li::marker {
+  color: #7a6f9b;
+}
+
+#location {
+  list-style-image: url("../svg/map-2.svg");
+}
+
+#email {
+  list-style-image: url("../svg/mail-forward.svg");
+}
+
+#phone {
+  list-style-image: url("../svg/phone.svg");
+}
+
+#reddit {
+  list-style-image: url("../svg/brand-reddit.svg");
+}
+
+/*# sourceMappingURL=style.css.map */
